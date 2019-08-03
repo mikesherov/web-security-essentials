@@ -1,0 +1,35 @@
+{
+  "name": "web-security-essentials",
+  "version": "1.0.0",
+  "description": "Sample Application to demonstrate security best practices",
+  "scripts": {
+    "start": "nodemon $INIT_CWD/site/index.js",
+    "start:evil.com": "node $INIT_CWD/evil.com/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikesherov/web-security-essentials.git"
+  },
+  "keywords": [
+    "secure",
+    "frontend"
+  ],
+  "author": "Mike Sherov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikesherov/web-security-essentials/issues"
+  },
+  "homepage": "https://github.com/mikesherov/web-security-essentials#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "csurf": "^1.10.0",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "helmet": "^3.21.1",
+    "https-localhost": "^4.4.0",
+    "npm-run-parallel": "^0.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  }
+}
