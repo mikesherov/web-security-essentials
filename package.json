@@ -1,0 +1,28 @@
+{
+  "name": "course-secure-frontend",
+  "version": "1.0.0",
+  "description": "Sample Application to demonstrate security best practices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:site": "node site/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikesherov/course-secure-frontend.git"
+  },
+  "keywords": [
+    "secure",
+    "frontend"
+  ],
+  "author": "Mike Sherov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikesherov/course-secure-frontend/issues"
+  },
+  "homepage": "https://github.com/mikesherov/course-secure-frontend#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.16.2"
+  }
+}
