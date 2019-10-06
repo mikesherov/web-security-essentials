@@ -1,12 +1,13 @@
+const localHost = require("https-localhost");
 const express = require("express");
 const session = require("express-session");
 const routeLogin = require("./routes/login");
 const routeMessages = require("./routes/messages");
 
-const port = 80;
+const port = 443;
 const domain = "localhost.charlesproxy.com";
 
-const app = express();
+const app = localHost(domain);
 app.use(express.urlencoded({ extended: true }));
 
 app.use(
@@ -28,5 +29,5 @@ app.use("/static", express.static(__dirname + "/static"));
 app.listen(port);
 
 console.log(
-  `open http://${domain} to observe localhost network traffic via Charles`
+  `open https://${domain} to observe localhost network traffic via Charles`
 );
