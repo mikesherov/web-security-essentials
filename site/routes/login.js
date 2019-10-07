@@ -25,6 +25,7 @@ module.exports = app => {
     .get((request, response) => {
       response.send(`
         <form action="/login" method="post">
+        <input type="hidden" name="_csrf" value=${request.csrfToken()}>
         <label for="username">username</label> <input name="username"><br>
         <label for="password">password</label> <input type="password" name="password"><br>
         <input type="submit">

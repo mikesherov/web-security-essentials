@@ -22,12 +22,13 @@ module.exports = app => {
         Today's latest messages:<br><br>
         ${messages.join("<br><br>")}
         <form action="/" method="post">
+          <input type="hidden" name="_csrf" value="${request.csrfToken()}">
           <label for="message">Message:</label><br>
           <textarea name="message"></textarea><br>
           <input type="submit">
         </form>
 
-        <button id="helloBtn">Send "Hello" Message</button>
+        <button id="helloBtn" data-csrftoken="${request.csrfToken()}">Send "Hello" Message</button>
         <script src="/static/index.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
       `);

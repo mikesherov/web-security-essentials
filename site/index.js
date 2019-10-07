@@ -2,6 +2,7 @@ const localHost = require("https-localhost");
 const helmet = require("helmet");
 const express = require("express");
 const session = require("express-session");
+const csurf = require("csurf");
 const routeLogin = require("./routes/login");
 const routeMessages = require("./routes/messages");
 
@@ -30,6 +31,14 @@ app.use(
     }
   })
 );
+
+app.use(csurf());
+app.use(function(err, req, res, next) {
+  if (err.code !== "EBADCSRFTOKEN") return next(err);
+
+  // handle CSRF token errors here
+  res.status(403).send("csrf detected");
+});
 
 routeLogin(app);
 routeMessages(app);
