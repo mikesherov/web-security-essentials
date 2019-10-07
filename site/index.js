@@ -1,4 +1,5 @@
 const localHost = require("https-localhost");
+const helmet = require("helmet");
 const express = require("express");
 const session = require("express-session");
 const routeLogin = require("./routes/login");
@@ -9,6 +10,13 @@ const domain = "localhost.charlesproxy.com";
 
 const app = localHost(domain);
 app.use(express.urlencoded({ extended: true }));
+app.use(
+  helmet.hsts({
+    maxAge: 60 * 60 * 24 * 365, // 1 year minimum to allow preload
+    includeSubDomains: true, // must cover all subdomains to allow preload
+    preload: true
+  })
+);
 
 app.use(
   session({
