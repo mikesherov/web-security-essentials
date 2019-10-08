@@ -25,10 +25,15 @@ app.use(function(req, res, next) {
   res.locals.nonce = crypto.randomBytes(16).toString("hex");
   next();
 });
+const selfNonceSrc = ["'self'", (req, res) => `'nonce-${res.locals.nonce}'`];
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
-      scriptSrc: ["'self'", (req, res) => `'nonce-${res.locals.nonce}'`],
+      defaultSrc: ["'none'"],
+      scriptSrc: selfNonceSrc,
+      connectSrc: selfNonceSrc,
+      imgSrc: selfNonceSrc,
+      styleSrc: selfNonceSrc,
       reportUri: "/report-violation"
     }
   })
