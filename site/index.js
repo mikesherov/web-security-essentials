@@ -25,8 +25,7 @@ app.use(
     directives: {
       scriptSrc: ["'self'", "https:"],
       reportUri: "/report-violation"
-    },
-    reportOnly: true
+    }
   })
 );
 app.use(
