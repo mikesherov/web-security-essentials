@@ -30,7 +30,9 @@ module.exports = app => {
 
         <button id="helloBtn" data-csrftoken="${request.csrfToken()}">Send "Hello" Message</button>
         <script src="/static/index.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js" nonce="${
+          response.locals.nonce
+        }"></script>
       `);
     });
 };

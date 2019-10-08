@@ -1,6 +1,7 @@
 const localHost = require("https-localhost");
 const helmet = require("helmet");
 const bodyParser = require("body-parser");
+const crypto = require("crypto");
 const express = require("express");
 const session = require("express-session");
 const csurf = require("csurf");
@@ -20,10 +21,14 @@ app.use(
   })
 );
 
+app.use(function(req, res, next) {
+  res.locals.nonce = crypto.randomBytes(16).toString("hex");
+  next();
+});
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
-      scriptSrc: ["'self'", "https:"],
+      scriptSrc: ["'self'", (req, res) => `'nonce-${res.locals.nonce}'`],
       reportUri: "/report-violation"
     }
   })
