@@ -89,7 +89,7 @@ This material is available for private, non-commercial use under the
 at mike.sherov@gmail.com for permission to use for any other use.
 
 [xss]: https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
-[csrf]: https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)
+[csrf]: https://owasp.org/www-community/attacks/csrf
 [charles]: https://www.charlesproxy.com/download/
 [npm]: https://www.npmjs.com/
 [node]: https://nodejs.org
