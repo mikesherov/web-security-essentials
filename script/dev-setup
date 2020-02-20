@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+cd "$(dirname "$0")/.." || exit 1
+DIR=$(pwd)
+
+for P in "$DIR"/script/dev-setup.d/*
+do
+  source "$P"
+done
+
+set -e
+
+function on-exit {
+  status=$?
+  if [ $status -ne 0 ]; then
+    echo
+    error "Setup wasn't successful"
+    error "Please check the logs above, follow any instructions and run $0 again"
+    exit $status
+  fi
+}
+trap "on-exit" EXIT
+
+info "Install dev dependencies"
+
+if ! node -v > /dev/null 2>&1; then
+  warn "Node.js is not installed"
+  exit 1
+fi
+
+npm install
+
+echo -e "${GREEN}>> You're all set up!${DEFAULT}"
