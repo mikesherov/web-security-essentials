@@ -27,6 +27,7 @@ app.use(
     cookie: {
       sameSite: "lax",
       secure: true,
+      // 🐨 httpOnly is the default so we can remove this option
       httpOnly: false
     }
   })
