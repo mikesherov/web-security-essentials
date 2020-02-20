@@ -1,30 +1,16 @@
 # Web Security Essentials
 
-This is the workshop material for
-[Web Security Essentials](https://github.com/mikesherov/web-security-essentials)!
-
 ## Workshop Prerequisites
 
 To have a productive workshop experience, please do the following:
 
-- [ ] Review the [Code of Conduct][coc] (~5 minutes)
-- [ ] Install and setup [Zoom](https://zoom.us) on the computer you will be using (~5 minutes)
-- [ ] If you are unfamiliar with Zoom, watch Kent C. Dodds's free lesson [Use Zoom for KCD Workshops](https://egghead.io/lessons/egghead-use-zoom-for-kcd-workshops)
 - [ ] Install [Charles][charles]
-- [ ] Verify your computer has the following installed and available in your `PATH` (~5 minutes)
-  - [ ] [git][git] (verify by running `git --version`)
-  - [ ] [NodeJS][node] v8.9.3 or greater (verify by running `node --version`)
-  - [ ] [npm][npm] (verify by running `npm --version`)
-  - [ ] [curl][curl] (verify by running `curl --version`)
-  - [ ] If you have trouble with this, learn more about setting your `PATH` here for [windows][win-path] or [mac][mac-path].
-- [ ] Ensure you have `sudo` (on mac/linux) or run your CLI as an Administrator (Windows).
-- [ ] Add the following to your hosts file, located at `/etc/hosts` (mac/linux) or `c:\Windows\System32\Drivers\etc\hosts` (windows). You may need sudo or [Administrator privileges](https://gist.github.com/zenorocha/18b10a14b2deb214dc4ce43a2d2e2992):
+- [ ] Add the following to your hosts file, located at `/etc/hosts` (mac/linux)
   ```
   127.0.0.1	localhost evil.com
   ```
 - [ ] Ensure you can successfully run the code (~5 minutes)
-  - [ ] **PLEASE ONLY ATTEMPT TO START THE FIRST EXERCISE. IF YOU JUMP AHEAD, YOU MAY ACCIDENTALLY TRIGGER HSTS AND WE'LL NEED TIME TO UNDO IT**
-  - [ ] Run `sudo npm install`. This will prompt you for your password, please enter it
+  - [ ] Run `script/dev-setup`
   - [ ] Go to the first exercise `cd exercises/01`
   - [ ] Run `sudo npm start`. If `sudo npm start` fails, try `nodemon ./site/index.js`
   - [ ] open http://localhost.charlesproxy.com and verify you see a login
