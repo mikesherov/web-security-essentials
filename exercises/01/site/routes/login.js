@@ -1,7 +1,11 @@
 const users = {
-  mikesherov: {
+  substantial: {
     password: "1",
     SSN: "123-45-6789"
+  },
+  attacker: {
+    password: "1",
+    SSN: "456-78-9012"
   }
 };
 
