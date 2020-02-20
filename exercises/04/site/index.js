@@ -16,6 +16,8 @@ app.use(
     resave: false,
     saveUninitialized: true,
     cookie: {
+      // 🐨 Set secure option
+      // 💰 secure: true,
       httpOnly: false
     }
   })
