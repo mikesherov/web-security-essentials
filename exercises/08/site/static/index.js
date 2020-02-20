@@ -4,7 +4,11 @@ helloBtn.addEventListener("click", async e => {
   await fetch("/", {
     credentials: "same-origin",
     method: "POST",
-    headers: { "Content-type": "application/x-www-form-urlencoded" },
+    headers: {
+      "Content-type": "application/x-www-form-urlencoded",
+      // 🐨 Add CSRF token header
+      // 💰 "csrf-token": e.target.dataset.csrftoken
+    },
     body: "message=hello"
   });
   window.location.reload();

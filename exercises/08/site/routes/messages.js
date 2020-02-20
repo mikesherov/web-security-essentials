@@ -17,6 +17,10 @@ module.exports = app => {
         return;
       }
       const { username, SSN } = request.session.user;
+      // 🐨 Add hidden input to form with CSRF token
+      // 💰 <input type="hidden" name="_csrf" value=${request.csrfToken()}>
+      // 🐨 Add CSRF data attribute to Send "Hello" Message button
+      // 💰 data-csrftoken="${request.csrfToken()}"
       response.send(`
         Hi, ${username} (${SSN})!<br>
         Today's latest messages:<br><br>

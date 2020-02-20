@@ -2,6 +2,8 @@ const localHost = require("https-localhost");
 const helmet = require("helmet");
 const express = require("express");
 const session = require("express-session");
+// 🐨 You'll need to import csurf
+// 💰 const csurf = require("csurf");
 const routeLogin = require("./routes/login");
 const routeMessages = require("./routes/messages");
 
@@ -24,12 +26,23 @@ app.use(
     resave: false,
     saveUninitialized: true,
     cookie: {
+      // 🐨 Remove the SameSite option to test the CSRF tokens work
       sameSite: "lax",
       secure: true,
       httpOnly: false
     }
   })
 );
+
+// 🐨 Set up server to use csurf
+// 💰 Here you go:
+// app.use(csurf());
+// app.use(function(err, _, res, next) {
+//   if (err.code !== "EBADCSRFTOKEN") return next(err);
+
+//   // handle CSRF token errors here
+//   res.status(403).send("csrf detected");
+// });
 
 routeLogin(app);
 routeMessages(app);
