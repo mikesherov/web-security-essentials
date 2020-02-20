@@ -28,6 +28,14 @@ app.use("/static", express.static(__dirname + "/static"));
 
 app.listen(port);
 
+// 🐨 Create second Express app to redirect HTTP to HTTPS
+// 💰 Here you go:
+// const redirApp = express();
+// redirApp.use(function(req, res) {
+//   return res.redirect(`https://${domain}${req.url}`);
+// });
+// redirApp.listen(80);
+
 console.log(
   `open https://${domain} to observe localhost network traffic via Charles`
 );
