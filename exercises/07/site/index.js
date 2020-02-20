@@ -24,6 +24,8 @@ app.use(
     resave: false,
     saveUninitialized: true,
     cookie: {
+      // 🐨 Set sameSite option to "lax"
+      // 💰 sameSite: "lax",
       secure: true,
       httpOnly: false
     }
