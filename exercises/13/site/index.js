@@ -26,6 +26,7 @@ app.use(
       scriptSrc: ["'self'", "https:"],
       reportUri: "/report-violation"
     },
+    // 🐨 Remove reportOnly option
     reportOnly: true
   })
 );
