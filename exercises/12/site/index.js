@@ -1,5 +1,7 @@
 const localHost = require("https-localhost");
 const helmet = require("helmet");
+// 🐨 You'll need to import body-parser
+// 💰 const bodyParser = require("body-parser");
 const express = require("express");
 const session = require("express-session");
 const csurf = require("csurf");
@@ -18,6 +20,33 @@ app.use(
     preload: true
   })
 );
+
+// 🐨 Use helmet to set CSP
+// 💰 Here you go:
+// app.use(
+//   helmet.contentSecurityPolicy({
+//     directives: {
+//       scriptSrc: ["'self'", "https:"],
+//       reportUri: "/report-violation"
+//     },
+//     reportOnly: true
+//   })
+// );
+
+// 🐨 Use bodyParser to parse CSP violation
+// 💰 Here you go:
+// app.use(
+//   bodyParser.json({
+//     type: ["json", "application/csp-report"]
+//   })
+// );
+
+// 🐨 Set up /report-violation endpoint to log violations
+// 💰 Here you go:
+// app.route("/report-violation").post((req, res) => {
+//   console.log("CSP Violation: ", req.body || "No data received!");
+//   res.status(200).send("ok");
+// });
 
 app.use(
   session({
