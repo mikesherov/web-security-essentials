@@ -1,12 +1,22 @@
 const messages = [];
 
+const escapeHtml = unsafe =>
+  String(unsafe)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+
 module.exports = app => {
   app
     .route("/")
     .post((request, response) => {
       if (request.session.user) {
         messages.push(
-          `message from ${request.session.user.username}: ${request.body.message}`
+          `message from ${escapeHtml(
+            request.session.user.username
+          )}: ${escapeHtml(request.body.message)}`
         );
       }
       response.redirect("/");
