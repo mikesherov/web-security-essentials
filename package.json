@@ -31,5 +31,16 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
+  },
+  "overrides": {
+    "meow": {
+      "trim-newlines": "4.0.1"
+    },
+    "npm-run-parallel": {
+      "trim-newlines": "4.0.1"
+    },
+    "trim-newlines": {
+      "trim-newlines": "4.0.1"
+    }
   }
 }
