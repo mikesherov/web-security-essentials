@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/mikesherov/web-security-essentials#readme",
   "dependencies": {
-    "body-parser": "^1.20.8",
+    "body-parser": "^1.20.9",
     "csurf": "^1.10.0",
     "express": "^5.2.1",
     "express-session": "^1.19.0",
