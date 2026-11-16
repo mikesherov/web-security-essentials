@@ -41,6 +41,9 @@
     },
     "trim-newlines": {
       "trim-newlines": "4.0.1"
+    },
+    "csurf": {
+      "cookie": "^0.7.1"
     }
   }
 }
